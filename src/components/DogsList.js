@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom'
 
 class DogsList extends Component {
 
-    renderDogBreed(breed) {
+    renderDogsBreed(breed) {
         if(breed === null)
             return 'Loading...'
         else
@@ -11,7 +11,7 @@ class DogsList extends Component {
                 <ul>
                     {breed.map(breed => 
                     <li key={breed}>
-                    <Link to={ `/dog-breeds/${breed}` }>{breed}</Link>
+                        <Link to={ `/dog-breeds/${breed}` }>{breed}</Link>
                     </li>)}
                 </ul>
             )
@@ -19,10 +19,13 @@ class DogsList extends Component {
 
     render() {
         const {dogBreeds} = this.props
+        console.log("WHAT PROPS?!", this.props)
+        console.log("WHATE STATE?!", this.state)
+
         return(
             <div className="dogs-list">
                 <h1>Dogs List</h1>
-                {this.renderDogBreed(dogBreeds)}
+                {this.renderDogsBreed(dogBreeds)}
             </div>
         )
     }

@@ -24,8 +24,9 @@ class DogsListContainer extends Component {
     }
 
     render() {
+        console.log("STATE", this.state)
         return (
-            <DogsList dogBreeds = {this.state.dogBreeds}/>
+            <DogsList dogBreeds={this.state.dogBreeds} />
         )
     }
 }
